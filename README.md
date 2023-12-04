@@ -5,7 +5,7 @@ signatures, and mutations
 Osama Shiraz Shah
 
 
-[https://osamashiraz.github.io/mDLC_Spatial_Analysis_2023/](link to webpage)
+[Link to webpage](https://osamashiraz.github.io/mDLC_Spatial_Analysis_2023/)
 
 
 # DISCLAIMER
