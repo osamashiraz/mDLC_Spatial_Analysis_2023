@@ -5,10 +5,6 @@ signatures, and mutations
 Osama Shiraz Shah
 
 
-[Link to webpage](https://osamashiraz.github.io/mDLC_Spatial_Analysis_2023/)
-[Link to dataset](https://data.mendeley.com/datasets/btv7g7n9ys/1)
-
-
 # DISCLAIMER
 
 This rmarkdown is produced to reproduce the bioinformatics analysis in
@@ -18,6 +14,16 @@ signatures, and mutations”. Run the script in sequential order. Make
 sure packages listed in the session info text file are installed.
 Changes in R and/or its package versions may result in changes in the
 expected output.
+
+
+![](index/figure-gfm/graphical_abstract.jpg)<!-- -->
+
+[Link to Preprint](https://www.biorxiv.org/content/10.1101/2023.09.09.557013v1)
+
+[Link to code webpage](https://osamashiraz.github.io/mDLC_Spatial_Analysis_2023/)
+
+[Link to dataset](https://data.mendeley.com/datasets/btv7g7n9ys/1)
+
 
 # INSTALL PACKAGES
 
@@ -45,7 +51,7 @@ source("./essentials/c.Prepare_QC_plots.R")
 supFig1A
 ```
 
-![](2023-09-28---Main_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
+![](index/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
 
 ``` r
 # ggsave(plot = supFig1A, file = "../outputs/Sup Fig.1A - Sequencing Saturation.png", dpi = 800, width=5, height=3.5)
@@ -57,7 +63,7 @@ supFig1A
 supFig1B
 ```
 
-![](2023-09-28---Main_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
+![](index/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
 
 ``` r
 # ggsave(plot = supFig1B, file = "../outputs/Sup Fig.1B - Signal to Noise Ratio.png", dpi = 800, width=5, height=3.5)
@@ -69,7 +75,7 @@ supFig1B
 supFig1C
 ```
 
-![](2023-09-28---Main_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
+![](index/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
 
 ``` r
 png(filename = "../outputs/Sup Fig.1C - Count Artifacts Heatmap.png", res = 200, width=1500, height=1000)
@@ -94,7 +100,7 @@ ecad_svg = ggplot(ecad_imagej, aes(Label, Ecadherin.normalized)) + geom_bar(stat
 ecad_svg
 ```
 
-![](2023-09-28---Main_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
+![](index/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
 
 ``` r
 # ggsave(plot = ecad_svg, file = "../outputs/Fig.1e - Ecadherin Intensites.png", dpi = 1000,  width=5, height=2.5)
@@ -123,7 +129,7 @@ supFig1D = ggplot(plt_df_top15,  aes(x = DIM_1, y = DIM_2, color = Histology, sh
 supFig1D
 ```
 
-![](2023-09-28---Main_files/figure-gfm/unnamed-chunk-10-1.png)<!-- -->
+![](index/figure-gfm/unnamed-chunk-10-1.png)<!-- -->
 
 ``` r
 # ggsave(plot = supFig1D, file = "../outputs/Sup Fig.1D - TSNE Plot.png", dpi = 800, width=5, height=3.5)
@@ -154,7 +160,7 @@ SupFig1E = ggplot(df_melt, aes(hist, value, color = hist)) + geom_boxplot(alpha 
 SupFig1E
 ```
 
-![](2023-09-28---Main_files/figure-gfm/unnamed-chunk-12-1.png)<!-- -->
+![](index/figure-gfm/unnamed-chunk-12-1.png)<!-- -->
 
 ``` r
 # ggsave(plot = SupFig1E, file = "../outputs/Sup Fig.1E - Clinical Marker Expression.png", dpi = 800, width=6, height=10)
@@ -190,7 +196,7 @@ SupFig1F = ggplot(EMT_markers_df, aes(Var1, value, fill = hist)) +
 SupFig1F
 ```
 
-![](2023-09-28---Main_files/figure-gfm/unnamed-chunk-14-1.png)<!-- -->
+![](index/figure-gfm/unnamed-chunk-14-1.png)<!-- -->
 
 ``` r
 # ggsave(file = "../outputs/Sup Fig.1F - EMT Markers.png", bg = "white", dpi = 1000,  plot = SupFig1F, width=10, height=3)
@@ -265,7 +271,7 @@ set.seed(123);  topVar_heatmap = Heatmap(topVarMat, col = colFun, name = "mRNA E
 draw(topVar_heatmap %v% pam50_heatmap, ht_gap = unit(0.1, "cm"))
 ```
 
-![](2023-09-28---Main_files/figure-gfm/unnamed-chunk-18-1.png)<!-- -->
+![](index/figure-gfm/unnamed-chunk-18-1.png)<!-- -->
 
 ``` r
 png("../outputs/Fig.2A - Transcriptomic Clases and Molecular Subtypes.png", res = 1000, 
@@ -311,7 +317,7 @@ draw(LvD_All_er_ht[[1]] + LvD_All_er_ht[[2]] + LvD_All_er_ht[[3]], merge_legend 
      heatmap_legend_side = "left")
 ```
 
-![](2023-09-28---Main_files/figure-gfm/unnamed-chunk-21-1.png)<!-- -->
+![](index/figure-gfm/unnamed-chunk-21-1.png)<!-- -->
 
 ``` r
 png("../outputs/Fig.2B - DEG Heatmap.png", res = 1000, width=3, height=6, units = "in")
@@ -328,7 +334,7 @@ dev.off()
 Fig2B
 ```
 
-![](2023-09-28---Main_files/figure-gfm/unnamed-chunk-22-1.png)<!-- -->
+![](index/figure-gfm/unnamed-chunk-22-1.png)<!-- -->
 
 ``` r
 # ggsave(plot = Fig2B, file = "../outputs/Fig.2B - DEG Volcano Plot.png", bg = "white",  dpi = 1000, width=6, height=3)
@@ -390,7 +396,7 @@ SupFig2C_venn_d = ggvenn::ggvenn(HD[c(1,4)],show_elements=F,stroke_color="Red", 
 SupFig2A
 ```
 
-![](2023-09-28---Main_files/figure-gfm/unnamed-chunk-24-1.png)<!-- -->
+![](index/figure-gfm/unnamed-chunk-24-1.png)<!-- -->
 
 ``` r
 # ggsave(plot = SupFig2A, file = "../outputs/Sup Fig.2A - MDLC1 DEG Volcano Plot.png", bg = "white", dpi = 1000, width=6, height=7)
@@ -398,7 +404,7 @@ SupFig2A
 SupFig2B
 ```
 
-![](2023-09-28---Main_files/figure-gfm/unnamed-chunk-24-2.png)<!-- -->
+![](index/figure-gfm/unnamed-chunk-24-2.png)<!-- -->
 
 ``` r
 # ggsave(plot = SupFig2B, file = "../outputs/Sup Fig.2B - MDLC2 DEG Volcano Plot.png",  bg = "white", dpi = 1000, width=6, height=7)
@@ -406,7 +412,7 @@ SupFig2B
 SupFig2C
 ```
 
-![](2023-09-28---Main_files/figure-gfm/unnamed-chunk-24-3.png)<!-- -->
+![](index/figure-gfm/unnamed-chunk-24-3.png)<!-- -->
 
 ``` r
 # ggsave(plot = SupFig2C, file = "../outputs/Sup Fig.2C - MDLC3 DEG Volcano Plot.png",  bg = "white", dpi = 1000, width=6, height=7)
@@ -418,7 +424,7 @@ SupFig2C
 SupFig2A_venn_l
 ```
 
-![](2023-09-28---Main_files/figure-gfm/unnamed-chunk-25-1.png)<!-- -->
+![](index/figure-gfm/unnamed-chunk-25-1.png)<!-- -->
 
 ``` r
 # ggsave(plot = SupFig2A_venn_l, file = "../outputs/Sup Fig.2A - MDLC1 Lobular DEG Overlap.png", bg = "white", dpi = 1000, width=6, height=7)
@@ -426,7 +432,7 @@ SupFig2A_venn_l
 SupFig2B_venn_l
 ```
 
-![](2023-09-28---Main_files/figure-gfm/unnamed-chunk-25-2.png)<!-- -->
+![](index/figure-gfm/unnamed-chunk-25-2.png)<!-- -->
 
 ``` r
 # ggsave(plot = SupFig2B_venn_l, file = "../outputs/Sup Fig.2B - MDLC2 Lobular DEG Overlap.png", bg = "white", dpi = 1000, width=6, height=7)
@@ -434,7 +440,7 @@ SupFig2B_venn_l
 SupFig2C_venn_l
 ```
 
-![](2023-09-28---Main_files/figure-gfm/unnamed-chunk-25-3.png)<!-- -->
+![](index/figure-gfm/unnamed-chunk-25-3.png)<!-- -->
 
 ``` r
 # ggsave(plot = SupFig2C_venn_l, file = "../outputs/Sup Fig.2C - MDLC3 Lobular DEG Overlap.png", bg = "white", dpi = 1000, width=6, height=7)
@@ -446,7 +452,7 @@ SupFig2C_venn_l
 SupFig2A_venn_d
 ```
 
-![](2023-09-28---Main_files/figure-gfm/unnamed-chunk-26-1.png)<!-- -->
+![](index/figure-gfm/unnamed-chunk-26-1.png)<!-- -->
 
 ``` r
 # ggsave(plot = SupFig2A_venn_d, file = "../outputs/Sup Fig.2A - MDLC1 Ductal DEG Overlap.png",  bg = "white", dpi = 1000, width=6, height=7)
@@ -454,7 +460,7 @@ SupFig2A_venn_d
 SupFig2B_venn_d
 ```
 
-![](2023-09-28---Main_files/figure-gfm/unnamed-chunk-26-2.png)<!-- -->
+![](index/figure-gfm/unnamed-chunk-26-2.png)<!-- -->
 
 ``` r
 # ggsave(plot = SupFig2B_venn_d, file = "../outputs/Sup Fig.2B - MDLC2 Ductal DEG Overlap.png", bg = "white", dpi = 1000, width=6, height=7)
@@ -462,7 +468,7 @@ SupFig2B_venn_d
 SupFig2C_venn_d
 ```
 
-![](2023-09-28---Main_files/figure-gfm/unnamed-chunk-26-3.png)<!-- -->
+![](index/figure-gfm/unnamed-chunk-26-3.png)<!-- -->
 
 ``` r
 # ggsave(plot = SupFig2C_venn_d, file = "../outputs/Sup Fig.2C - MDLC3 Ductal DEG Overlap.png",  bg = "white", dpi = 1000, width=6, height=7)
@@ -490,7 +496,7 @@ lob_int = seqsetvis::ssvFeatureVenn(list(`DSP Lobular` = lobular_all, `TCGA ILC`
 lob_int
 ```
 
-![](2023-09-28---Main_files/figure-gfm/unnamed-chunk-28-1.png)<!-- -->
+![](index/figure-gfm/unnamed-chunk-28-1.png)<!-- -->
 
 ``` r
 # ggsave(file = "../outputs/Fig.2C - mDLC lobular vs TCGA ILC DEG Overlap.png", dpi = 800,  bg = "white", plot = lob_int, width=4, height=4)
@@ -510,7 +516,7 @@ duc_int = seqsetvis::ssvFeatureVenn(list(`DSP Ductal` = ductal_all, `TCGA IDC` =
 duc_int
 ```
 
-![](2023-09-28---Main_files/figure-gfm/unnamed-chunk-28-2.png)<!-- -->
+![](index/figure-gfm/unnamed-chunk-28-2.png)<!-- -->
 
 ``` r
 # ggsave(file = "../outputs/Fig.2C - mDLC ductal vs TCGA NST DEG Overlap.png", dpi = 800, bg = "white", plot = duc_int, width=4, height=4)
@@ -560,7 +566,7 @@ set.seed(123);  gsva_heatmap = Heatmap(t((t(sig_score[SigPathways,]))),
 gsva_heatmap
 ```
 
-![](2023-09-28---Main_files/figure-gfm/unnamed-chunk-31-1.png)<!-- -->
+![](index/figure-gfm/unnamed-chunk-31-1.png)<!-- -->
 
 ``` r
 png("../outputs/Fig.2D - Differential Hallmark Pathways.png", res = 1000, 
@@ -597,7 +603,7 @@ set.seed(123); bioThemes_HT = Heatmap(as.matrix(jacMat_sub), name = "Jaccard Sim
 bioThemes_HT
 ```
 
-![](2023-09-28---Main_files/figure-gfm/unnamed-chunk-33-1.png)<!-- -->
+![](index/figure-gfm/unnamed-chunk-33-1.png)<!-- -->
 
 ``` r
 png("../outputs/Fig.2E - Recurring Biological Themes (left panel).png", res = 1000, 
@@ -641,7 +647,7 @@ set.seed(123); mean_score_HT = Heatmap(clusters_scores, col = colFun4,
 mean_score_HT
 ```
 
-![](2023-09-28---Main_files/figure-gfm/unnamed-chunk-34-1.png)<!-- -->
+![](index/figure-gfm/unnamed-chunk-34-1.png)<!-- -->
 
 ``` r
 png("../outputs/Fig.2E - Recurring Biological Themes (right panel).png", res = 1000, 
@@ -689,7 +695,7 @@ ggplot(df_melt, aes(hist, value, color = hist)) + geom_boxplot(alpha = 0.5, outl
                      color = 'red', size = 6) + ylim(c(-2,2)) + ylab("Gene Expression") + xlab(" ")
 ```
 
-![](2023-09-28---Main_files/figure-gfm/unnamed-chunk-35-1.png)<!-- -->
+![](index/figure-gfm/unnamed-chunk-35-1.png)<!-- -->
 
 ## - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -732,7 +738,7 @@ fig4A = ggarrange(plotlist = list(tsnePlot,cellPhase_plt,CDH1_exp_plt, CDH1_exp_
 fig4A
 ```
 
-![](2023-09-28---Main_files/figure-gfm/unnamed-chunk-38-1.png)<!-- -->
+![](index/figure-gfm/unnamed-chunk-38-1.png)<!-- -->
 
 ``` r
 # ggsave(plot = fig4A, file = "../outputs/Fig.4A - scRNA Transcriptomic Clusters.png",bg = "white",  dpi = 800, width=12, height=3)
@@ -765,7 +771,7 @@ fig4B = ggarrange(plotlist = list(Ductal_DSP_signature, Lobular_DSP_signature), 
 fig4B
 ```
 
-![](2023-09-28---Main_files/figure-gfm/unnamed-chunk-40-1.png)<!-- -->
+![](index/figure-gfm/unnamed-chunk-40-1.png)<!-- -->
 
 ``` r
 # ggsave(plot = fig4B, file = "../outputs/Fig.4B - scRNA Ductal and Lobular Populations - DSP Deconvulution.png", bg = "white", dpi = 800, width=8, height=5)
@@ -850,7 +856,7 @@ scRNAseq_DEG_plot = ggplot(MDLC1_scRNAseq_epi_markers, aes(x = avg_log2FC, y = l
 scRNAseq_DEG_plot
 ```
 
-![](2023-09-28---Main_files/figure-gfm/unnamed-chunk-43-1.png)<!-- -->
+![](index/figure-gfm/unnamed-chunk-43-1.png)<!-- -->
 
 ``` r
 # ggsave(plot = scRNAseq_DEG_plot,  file = "../outputs/Sup Fig.6B - scRNAseq Ductal vs Lobular DEG Volcano Plot.png", bg = "white", dpi = 800, width=8, height=5)
@@ -940,7 +946,7 @@ DSP_scRNASeq_overlap_ductal = seqsetvis::ssvFeatureVenn(list(`DSP` = DSP_ductal,
 DSP_scRNASeq_overlap_lobular
 ```
 
-![](2023-09-28---Main_files/figure-gfm/unnamed-chunk-45-1.png)<!-- -->
+![](index/figure-gfm/unnamed-chunk-45-1.png)<!-- -->
 
 ``` r
 # ggsave(file = "../outputs/Sup Fig.6C - DSP lobular vs scRNAseq Lobular DEG Overlap.png", dpi = 800,  bg = "white", plot = DSP_scRNASeq_overlap_lobular, width=4, height=4)
@@ -948,7 +954,7 @@ DSP_scRNASeq_overlap_lobular
 DSP_scRNASeq_overlap_ductal
 ```
 
-![](2023-09-28---Main_files/figure-gfm/unnamed-chunk-45-2.png)<!-- -->
+![](index/figure-gfm/unnamed-chunk-45-2.png)<!-- -->
 
 ``` r
 # ggsave(file = "../outputs/Sup Fig.6C - DSP ductal vs scRNAseq ductal DEG Overlap.png", dpi = 800,  bg = "white", plot = DSP_scRNASeq_overlap_ductal, width=4, height=4)
@@ -964,7 +970,7 @@ library(clustree)
 clustree(MDLC1_scRNAseq_epi, prefix = "RNA_snn_res.")
 ```
 
-![](2023-09-28---Main_files/figure-gfm/unnamed-chunk-46-1.png)<!-- -->
+![](index/figure-gfm/unnamed-chunk-46-1.png)<!-- -->
 
 ### b. DEFINING SUBCLUSTERS
 
@@ -1000,7 +1006,7 @@ source("./essentials/l.subcluster_markerGenes.R")
 subCluster_Tnse
 ```
 
-![](2023-09-28---Main_files/figure-gfm/unnamed-chunk-49-1.png)<!-- -->
+![](index/figure-gfm/unnamed-chunk-49-1.png)<!-- -->
 
 ``` r
 # ggsave(plot = subCluster_Tnse,  file = "../outputs/Fig.4C - scRNA subcluster tsne.png", dpi = 800, width=4, height=2)
@@ -1009,7 +1015,7 @@ subCluster_Tnse
 draw(Markers_Ht, ht_gap = unit(0.1, "cm"))
 ```
 
-![](2023-09-28---Main_files/figure-gfm/unnamed-chunk-49-2.png)<!-- -->
+![](index/figure-gfm/unnamed-chunk-49-2.png)<!-- -->
 
 ``` r
 png("../outputs/Fig.4C - scRNA subcluster all marker genes.png", res = 200, 
@@ -1027,7 +1033,7 @@ dev.off()
 draw(topMarkers_Ht, ht_gap = unit(0.1, "cm"))
 ```
 
-![](2023-09-28---Main_files/figure-gfm/unnamed-chunk-50-1.png)<!-- -->
+![](index/figure-gfm/unnamed-chunk-50-1.png)<!-- -->
 
 ``` r
 png("../outputs/Sup Fig.6D - scRNA subcluster top marker genes.png", res = 1000, 
@@ -1086,7 +1092,7 @@ set.seed(123); Fig4D = Heatmap(t(mat), name = "GSVA", col = colFun,border = T, s
 draw(Fig4D, ht_gap = unit(0.1, "cm"))
 ```
 
-![](2023-09-28---Main_files/figure-gfm/unnamed-chunk-52-1.png)<!-- -->
+![](index/figure-gfm/unnamed-chunk-52-1.png)<!-- -->
 
 ``` r
 png("../outputs/Fig.4D - Subcluster_ROI Mapping.png", res = 1000, 
@@ -1108,7 +1114,7 @@ dev.off()
 draw(hallmark_gsva_heatmap_scRNA, heatmap_legend_side = "left")
 ```
 
-![](2023-09-28---Main_files/figure-gfm/unnamed-chunk-54-1.png)<!-- -->
+![](index/figure-gfm/unnamed-chunk-54-1.png)<!-- -->
 
 ``` r
 png("../outputs/Sup Fig.7A - Hallmark Pathways scRNAseq.png", res = 1000, 
@@ -1142,7 +1148,7 @@ hallmark_subcluster_barplot_scRNA = ggplot(sig_score_df_mean, aes(x = Cluster, y
 hallmark_subcluster_barplot_scRNA
 ```
 
-![](2023-09-28---Main_files/figure-gfm/unnamed-chunk-55-1.png)<!-- -->
+![](index/figure-gfm/unnamed-chunk-55-1.png)<!-- -->
 
 ``` r
 # ggsave(plot = hallmark_subcluster_barplot_scRNA, file = "../outputs/Sup Fig.7B - Subcluster Hallmark Pathway Scores.png", dpi = 800, width=6, height=8)
@@ -1156,7 +1162,7 @@ hallmark_subcluster_barplot_scRNA
 draw(biologicalTheme_heatmap_scRNA, heatmap_legend_side = "left")
 ```
 
-![](2023-09-28---Main_files/figure-gfm/unnamed-chunk-57-1.png)<!-- -->
+![](index/figure-gfm/unnamed-chunk-57-1.png)<!-- -->
 
 ``` r
 png("../outputs/Sup Fig.7C - Biological Themes scRNAseq.png", res = 1000, 
@@ -1174,7 +1180,7 @@ dev.off()
 draw(biologicalTheme_heatmap_scRNA_mean, heatmap_legend_side = "left")
 ```
 
-![](2023-09-28---Main_files/figure-gfm/unnamed-chunk-58-1.png)<!-- -->
+![](index/figure-gfm/unnamed-chunk-58-1.png)<!-- -->
 
 ``` r
 png("../outputs/Sup Fig.7D - Biological Themes scRNAseq Mean Scores.png", res = 1000, 
