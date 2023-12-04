@@ -2,23 +2,10 @@
 title: "Spatial molecular profiling of mixed invasive ductal-lobular breast cancers reveals heterogeneity in intrinsic molecular subtypes, oncogenic signatures, and mutations"
 author: "Osama Shiraz Shah"
 updated on: "`r Sys.Date()`"
-output: 
-  prettydoc::html_pretty:
-    theme: Cayman
-  md_document:
-    variant: markdown_github
+output:  rmarkdown::github_document
 editor_options: 
   chunk_output_type: inline
 ---
-
-<style type="text/css">
-.main-container {
-  max-width: 1800px;
-  margin-left: auto;
-  margin-right: auto;
-}
-</style>
-
 
 
 # DISCLAIMER

@@ -1,10 +1,8 @@
-<style type="text/css">
-.main-container {
-  max-width: 1800px;
-  margin-left: auto;
-  margin-right: auto;
-}
-</style>
+Spatial molecular profiling of mixed invasive ductal-lobular breast
+cancers reveals heterogeneity in intrinsic molecular subtypes, oncogenic
+signatures, and mutations
+================
+Osama Shiraz Shah
 
 # DISCLAIMER
 
@@ -28,7 +26,7 @@ source("./essentials/a.Load_packages_and_functions.R")
 source("./essentials/b.Load_dataset.R")
 ```
 
-#………………………………………………………………………………………………….
+\#………………………………………………………………………………………………….
 
 # A. PREPARE QC PLOTS
 
@@ -42,7 +40,7 @@ source("./essentials/c.Prepare_QC_plots.R")
 supFig1A
 ```
 
-![](2023-09-28---Main_files/figure-markdown_github/unnamed-chunk-5-1.png)
+![](2023-09-28---Main_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
 
 ``` r
 # ggsave(plot = supFig1A, file = "../outputs/Sup Fig.1A - Sequencing Saturation.png", dpi = 800, width=5, height=3.5)
@@ -54,7 +52,7 @@ supFig1A
 supFig1B
 ```
 
-![](2023-09-28---Main_files/figure-markdown_github/unnamed-chunk-6-1.png)
+![](2023-09-28---Main_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
 
 ``` r
 # ggsave(plot = supFig1B, file = "../outputs/Sup Fig.1B - Signal to Noise Ratio.png", dpi = 800, width=5, height=3.5)
@@ -66,7 +64,7 @@ supFig1B
 supFig1C
 ```
 
-![](2023-09-28---Main_files/figure-markdown_github/unnamed-chunk-7-1.png)
+![](2023-09-28---Main_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
 
 ``` r
 png(filename = "../outputs/Sup Fig.1C - Count Artifacts Heatmap.png", res = 200, width=1500, height=1000)
@@ -91,7 +89,7 @@ ecad_svg = ggplot(ecad_imagej, aes(Label, Ecadherin.normalized)) + geom_bar(stat
 ecad_svg
 ```
 
-![](2023-09-28---Main_files/figure-markdown_github/unnamed-chunk-8-1.png)
+![](2023-09-28---Main_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
 
 ``` r
 # ggsave(plot = ecad_svg, file = "../outputs/Fig.1e - Ecadherin Intensites.png", dpi = 1000,  width=5, height=2.5)
@@ -120,7 +118,7 @@ supFig1D = ggplot(plt_df_top15,  aes(x = DIM_1, y = DIM_2, color = Histology, sh
 supFig1D
 ```
 
-![](2023-09-28---Main_files/figure-markdown_github/unnamed-chunk-10-1.png)
+![](2023-09-28---Main_files/figure-gfm/unnamed-chunk-10-1.png)<!-- -->
 
 ``` r
 # ggsave(plot = supFig1D, file = "../outputs/Sup Fig.1D - TSNE Plot.png", dpi = 800, width=5, height=3.5)
@@ -151,7 +149,7 @@ SupFig1E = ggplot(df_melt, aes(hist, value, color = hist)) + geom_boxplot(alpha 
 SupFig1E
 ```
 
-![](2023-09-28---Main_files/figure-markdown_github/unnamed-chunk-12-1.png)
+![](2023-09-28---Main_files/figure-gfm/unnamed-chunk-12-1.png)<!-- -->
 
 ``` r
 # ggsave(plot = SupFig1E, file = "../outputs/Sup Fig.1E - Clinical Marker Expression.png", dpi = 800, width=6, height=10)
@@ -187,7 +185,7 @@ SupFig1F = ggplot(EMT_markers_df, aes(Var1, value, fill = hist)) +
 SupFig1F
 ```
 
-![](2023-09-28---Main_files/figure-markdown_github/unnamed-chunk-14-1.png)
+![](2023-09-28---Main_files/figure-gfm/unnamed-chunk-14-1.png)<!-- -->
 
 ``` r
 # ggsave(file = "../outputs/Sup Fig.1F - EMT Markers.png", bg = "white", dpi = 1000,  plot = SupFig1F, width=10, height=3)
@@ -262,7 +260,7 @@ set.seed(123);  topVar_heatmap = Heatmap(topVarMat, col = colFun, name = "mRNA E
 draw(topVar_heatmap %v% pam50_heatmap, ht_gap = unit(0.1, "cm"))
 ```
 
-![](2023-09-28---Main_files/figure-markdown_github/unnamed-chunk-18-1.png)
+![](2023-09-28---Main_files/figure-gfm/unnamed-chunk-18-1.png)<!-- -->
 
 ``` r
 png("../outputs/Fig.2A - Transcriptomic Clases and Molecular Subtypes.png", res = 1000, 
@@ -308,7 +306,7 @@ draw(LvD_All_er_ht[[1]] + LvD_All_er_ht[[2]] + LvD_All_er_ht[[3]], merge_legend 
      heatmap_legend_side = "left")
 ```
 
-![](2023-09-28---Main_files/figure-markdown_github/unnamed-chunk-21-1.png)
+![](2023-09-28---Main_files/figure-gfm/unnamed-chunk-21-1.png)<!-- -->
 
 ``` r
 png("../outputs/Fig.2B - DEG Heatmap.png", res = 1000, width=3, height=6, units = "in")
@@ -325,7 +323,7 @@ dev.off()
 Fig2B
 ```
 
-![](2023-09-28---Main_files/figure-markdown_github/unnamed-chunk-22-1.png)
+![](2023-09-28---Main_files/figure-gfm/unnamed-chunk-22-1.png)<!-- -->
 
 ``` r
 # ggsave(plot = Fig2B, file = "../outputs/Fig.2B - DEG Volcano Plot.png", bg = "white",  dpi = 1000, width=6, height=3)
@@ -387,7 +385,7 @@ SupFig2C_venn_d = ggvenn::ggvenn(HD[c(1,4)],show_elements=F,stroke_color="Red", 
 SupFig2A
 ```
 
-![](2023-09-28---Main_files/figure-markdown_github/unnamed-chunk-24-1.png)
+![](2023-09-28---Main_files/figure-gfm/unnamed-chunk-24-1.png)<!-- -->
 
 ``` r
 # ggsave(plot = SupFig2A, file = "../outputs/Sup Fig.2A - MDLC1 DEG Volcano Plot.png", bg = "white", dpi = 1000, width=6, height=7)
@@ -395,7 +393,7 @@ SupFig2A
 SupFig2B
 ```
 
-![](2023-09-28---Main_files/figure-markdown_github/unnamed-chunk-24-2.png)
+![](2023-09-28---Main_files/figure-gfm/unnamed-chunk-24-2.png)<!-- -->
 
 ``` r
 # ggsave(plot = SupFig2B, file = "../outputs/Sup Fig.2B - MDLC2 DEG Volcano Plot.png",  bg = "white", dpi = 1000, width=6, height=7)
@@ -403,7 +401,7 @@ SupFig2B
 SupFig2C
 ```
 
-![](2023-09-28---Main_files/figure-markdown_github/unnamed-chunk-24-3.png)
+![](2023-09-28---Main_files/figure-gfm/unnamed-chunk-24-3.png)<!-- -->
 
 ``` r
 # ggsave(plot = SupFig2C, file = "../outputs/Sup Fig.2C - MDLC3 DEG Volcano Plot.png",  bg = "white", dpi = 1000, width=6, height=7)
@@ -415,7 +413,7 @@ SupFig2C
 SupFig2A_venn_l
 ```
 
-![](2023-09-28---Main_files/figure-markdown_github/unnamed-chunk-25-1.png)
+![](2023-09-28---Main_files/figure-gfm/unnamed-chunk-25-1.png)<!-- -->
 
 ``` r
 # ggsave(plot = SupFig2A_venn_l, file = "../outputs/Sup Fig.2A - MDLC1 Lobular DEG Overlap.png", bg = "white", dpi = 1000, width=6, height=7)
@@ -423,7 +421,7 @@ SupFig2A_venn_l
 SupFig2B_venn_l
 ```
 
-![](2023-09-28---Main_files/figure-markdown_github/unnamed-chunk-25-2.png)
+![](2023-09-28---Main_files/figure-gfm/unnamed-chunk-25-2.png)<!-- -->
 
 ``` r
 # ggsave(plot = SupFig2B_venn_l, file = "../outputs/Sup Fig.2B - MDLC2 Lobular DEG Overlap.png", bg = "white", dpi = 1000, width=6, height=7)
@@ -431,7 +429,7 @@ SupFig2B_venn_l
 SupFig2C_venn_l
 ```
 
-![](2023-09-28---Main_files/figure-markdown_github/unnamed-chunk-25-3.png)
+![](2023-09-28---Main_files/figure-gfm/unnamed-chunk-25-3.png)<!-- -->
 
 ``` r
 # ggsave(plot = SupFig2C_venn_l, file = "../outputs/Sup Fig.2C - MDLC3 Lobular DEG Overlap.png", bg = "white", dpi = 1000, width=6, height=7)
@@ -443,7 +441,7 @@ SupFig2C_venn_l
 SupFig2A_venn_d
 ```
 
-![](2023-09-28---Main_files/figure-markdown_github/unnamed-chunk-26-1.png)
+![](2023-09-28---Main_files/figure-gfm/unnamed-chunk-26-1.png)<!-- -->
 
 ``` r
 # ggsave(plot = SupFig2A_venn_d, file = "../outputs/Sup Fig.2A - MDLC1 Ductal DEG Overlap.png",  bg = "white", dpi = 1000, width=6, height=7)
@@ -451,7 +449,7 @@ SupFig2A_venn_d
 SupFig2B_venn_d
 ```
 
-![](2023-09-28---Main_files/figure-markdown_github/unnamed-chunk-26-2.png)
+![](2023-09-28---Main_files/figure-gfm/unnamed-chunk-26-2.png)<!-- -->
 
 ``` r
 # ggsave(plot = SupFig2B_venn_d, file = "../outputs/Sup Fig.2B - MDLC2 Ductal DEG Overlap.png", bg = "white", dpi = 1000, width=6, height=7)
@@ -459,7 +457,7 @@ SupFig2B_venn_d
 SupFig2C_venn_d
 ```
 
-![](2023-09-28---Main_files/figure-markdown_github/unnamed-chunk-26-3.png)
+![](2023-09-28---Main_files/figure-gfm/unnamed-chunk-26-3.png)<!-- -->
 
 ``` r
 # ggsave(plot = SupFig2C_venn_d, file = "../outputs/Sup Fig.2C - MDLC3 Ductal DEG Overlap.png",  bg = "white", dpi = 1000, width=6, height=7)
@@ -487,7 +485,7 @@ lob_int = seqsetvis::ssvFeatureVenn(list(`DSP Lobular` = lobular_all, `TCGA ILC`
 lob_int
 ```
 
-![](2023-09-28---Main_files/figure-markdown_github/unnamed-chunk-28-1.png)
+![](2023-09-28---Main_files/figure-gfm/unnamed-chunk-28-1.png)<!-- -->
 
 ``` r
 # ggsave(file = "../outputs/Fig.2C - mDLC lobular vs TCGA ILC DEG Overlap.png", dpi = 800,  bg = "white", plot = lob_int, width=4, height=4)
@@ -507,7 +505,7 @@ duc_int = seqsetvis::ssvFeatureVenn(list(`DSP Ductal` = ductal_all, `TCGA IDC` =
 duc_int
 ```
 
-![](2023-09-28---Main_files/figure-markdown_github/unnamed-chunk-28-2.png)
+![](2023-09-28---Main_files/figure-gfm/unnamed-chunk-28-2.png)<!-- -->
 
 ``` r
 # ggsave(file = "../outputs/Fig.2C - mDLC ductal vs TCGA NST DEG Overlap.png", dpi = 800, bg = "white", plot = duc_int, width=4, height=4)
@@ -517,7 +515,7 @@ duc_int
 
 # D. PATHWAY ANALYSIS
 
-##I. LOAD MSIG GSETS
+\##I. LOAD MSIG GSETS
 
 ``` r
 # library(hypeR)
@@ -557,7 +555,7 @@ set.seed(123);  gsva_heatmap = Heatmap(t((t(sig_score[SigPathways,]))),
 gsva_heatmap
 ```
 
-![](2023-09-28---Main_files/figure-markdown_github/unnamed-chunk-31-1.png)
+![](2023-09-28---Main_files/figure-gfm/unnamed-chunk-31-1.png)<!-- -->
 
 ``` r
 png("../outputs/Fig.2D - Differential Hallmark Pathways.png", res = 1000, 
@@ -594,7 +592,7 @@ set.seed(123); bioThemes_HT = Heatmap(as.matrix(jacMat_sub), name = "Jaccard Sim
 bioThemes_HT
 ```
 
-![](2023-09-28---Main_files/figure-markdown_github/unnamed-chunk-33-1.png)
+![](2023-09-28---Main_files/figure-gfm/unnamed-chunk-33-1.png)<!-- -->
 
 ``` r
 png("../outputs/Fig.2E - Recurring Biological Themes (left panel).png", res = 1000, 
@@ -638,7 +636,7 @@ set.seed(123); mean_score_HT = Heatmap(clusters_scores, col = colFun4,
 mean_score_HT
 ```
 
-![](2023-09-28---Main_files/figure-markdown_github/unnamed-chunk-34-1.png)
+![](2023-09-28---Main_files/figure-gfm/unnamed-chunk-34-1.png)<!-- -->
 
 ``` r
 png("../outputs/Fig.2E - Recurring Biological Themes (right panel).png", res = 1000, 
@@ -686,7 +684,7 @@ ggplot(df_melt, aes(hist, value, color = hist)) + geom_boxplot(alpha = 0.5, outl
                      color = 'red', size = 6) + ylim(c(-2,2)) + ylab("Gene Expression") + xlab(" ")
 ```
 
-![](2023-09-28---Main_files/figure-markdown_github/unnamed-chunk-35-1.png)
+![](2023-09-28---Main_files/figure-gfm/unnamed-chunk-35-1.png)<!-- -->
 
 ## - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -729,7 +727,7 @@ fig4A = ggarrange(plotlist = list(tsnePlot,cellPhase_plt,CDH1_exp_plt, CDH1_exp_
 fig4A
 ```
 
-![](2023-09-28---Main_files/figure-markdown_github/unnamed-chunk-38-1.png)
+![](2023-09-28---Main_files/figure-gfm/unnamed-chunk-38-1.png)<!-- -->
 
 ``` r
 # ggsave(plot = fig4A, file = "../outputs/Fig.4A - scRNA Transcriptomic Clusters.png",bg = "white",  dpi = 800, width=12, height=3)
@@ -762,7 +760,7 @@ fig4B = ggarrange(plotlist = list(Ductal_DSP_signature, Lobular_DSP_signature), 
 fig4B
 ```
 
-![](2023-09-28---Main_files/figure-markdown_github/unnamed-chunk-40-1.png)
+![](2023-09-28---Main_files/figure-gfm/unnamed-chunk-40-1.png)<!-- -->
 
 ``` r
 # ggsave(plot = fig4B, file = "../outputs/Fig.4B - scRNA Ductal and Lobular Populations - DSP Deconvulution.png", bg = "white", dpi = 800, width=8, height=5)
@@ -847,7 +845,7 @@ scRNAseq_DEG_plot = ggplot(MDLC1_scRNAseq_epi_markers, aes(x = avg_log2FC, y = l
 scRNAseq_DEG_plot
 ```
 
-![](2023-09-28---Main_files/figure-markdown_github/unnamed-chunk-43-1.png)
+![](2023-09-28---Main_files/figure-gfm/unnamed-chunk-43-1.png)<!-- -->
 
 ``` r
 # ggsave(plot = scRNAseq_DEG_plot,  file = "../outputs/Sup Fig.6B - scRNAseq Ductal vs Lobular DEG Volcano Plot.png", bg = "white", dpi = 800, width=8, height=5)
@@ -937,7 +935,7 @@ DSP_scRNASeq_overlap_ductal = seqsetvis::ssvFeatureVenn(list(`DSP` = DSP_ductal,
 DSP_scRNASeq_overlap_lobular
 ```
 
-![](2023-09-28---Main_files/figure-markdown_github/unnamed-chunk-45-1.png)
+![](2023-09-28---Main_files/figure-gfm/unnamed-chunk-45-1.png)<!-- -->
 
 ``` r
 # ggsave(file = "../outputs/Sup Fig.6C - DSP lobular vs scRNAseq Lobular DEG Overlap.png", dpi = 800,  bg = "white", plot = DSP_scRNASeq_overlap_lobular, width=4, height=4)
@@ -945,7 +943,7 @@ DSP_scRNASeq_overlap_lobular
 DSP_scRNASeq_overlap_ductal
 ```
 
-![](2023-09-28---Main_files/figure-markdown_github/unnamed-chunk-45-2.png)
+![](2023-09-28---Main_files/figure-gfm/unnamed-chunk-45-2.png)<!-- -->
 
 ``` r
 # ggsave(file = "../outputs/Sup Fig.6C - DSP ductal vs scRNAseq ductal DEG Overlap.png", dpi = 800,  bg = "white", plot = DSP_scRNASeq_overlap_ductal, width=4, height=4)
@@ -961,7 +959,7 @@ library(clustree)
 clustree(MDLC1_scRNAseq_epi, prefix = "RNA_snn_res.")
 ```
 
-![](2023-09-28---Main_files/figure-markdown_github/unnamed-chunk-46-1.png)
+![](2023-09-28---Main_files/figure-gfm/unnamed-chunk-46-1.png)<!-- -->
 
 ### b. DEFINING SUBCLUSTERS
 
@@ -997,7 +995,7 @@ source("./essentials/l.subcluster_markerGenes.R")
 subCluster_Tnse
 ```
 
-![](2023-09-28---Main_files/figure-markdown_github/unnamed-chunk-49-1.png)
+![](2023-09-28---Main_files/figure-gfm/unnamed-chunk-49-1.png)<!-- -->
 
 ``` r
 # ggsave(plot = subCluster_Tnse,  file = "../outputs/Fig.4C - scRNA subcluster tsne.png", dpi = 800, width=4, height=2)
@@ -1006,7 +1004,7 @@ subCluster_Tnse
 draw(Markers_Ht, ht_gap = unit(0.1, "cm"))
 ```
 
-![](2023-09-28---Main_files/figure-markdown_github/unnamed-chunk-49-2.png)
+![](2023-09-28---Main_files/figure-gfm/unnamed-chunk-49-2.png)<!-- -->
 
 ``` r
 png("../outputs/Fig.4C - scRNA subcluster all marker genes.png", res = 200, 
@@ -1024,7 +1022,7 @@ dev.off()
 draw(topMarkers_Ht, ht_gap = unit(0.1, "cm"))
 ```
 
-![](2023-09-28---Main_files/figure-markdown_github/unnamed-chunk-50-1.png)
+![](2023-09-28---Main_files/figure-gfm/unnamed-chunk-50-1.png)<!-- -->
 
 ``` r
 png("../outputs/Sup Fig.6D - scRNA subcluster top marker genes.png", res = 1000, 
@@ -1083,7 +1081,7 @@ set.seed(123); Fig4D = Heatmap(t(mat), name = "GSVA", col = colFun,border = T, s
 draw(Fig4D, ht_gap = unit(0.1, "cm"))
 ```
 
-![](2023-09-28---Main_files/figure-markdown_github/unnamed-chunk-52-1.png)
+![](2023-09-28---Main_files/figure-gfm/unnamed-chunk-52-1.png)<!-- -->
 
 ``` r
 png("../outputs/Fig.4D - Subcluster_ROI Mapping.png", res = 1000, 
@@ -1105,7 +1103,7 @@ dev.off()
 draw(hallmark_gsva_heatmap_scRNA, heatmap_legend_side = "left")
 ```
 
-![](2023-09-28---Main_files/figure-markdown_github/unnamed-chunk-54-1.png)
+![](2023-09-28---Main_files/figure-gfm/unnamed-chunk-54-1.png)<!-- -->
 
 ``` r
 png("../outputs/Sup Fig.7A - Hallmark Pathways scRNAseq.png", res = 1000, 
@@ -1139,7 +1137,7 @@ hallmark_subcluster_barplot_scRNA = ggplot(sig_score_df_mean, aes(x = Cluster, y
 hallmark_subcluster_barplot_scRNA
 ```
 
-![](2023-09-28---Main_files/figure-markdown_github/unnamed-chunk-55-1.png)
+![](2023-09-28---Main_files/figure-gfm/unnamed-chunk-55-1.png)<!-- -->
 
 ``` r
 # ggsave(plot = hallmark_subcluster_barplot_scRNA, file = "../outputs/Sup Fig.7B - Subcluster Hallmark Pathway Scores.png", dpi = 800, width=6, height=8)
@@ -1153,7 +1151,7 @@ hallmark_subcluster_barplot_scRNA
 draw(biologicalTheme_heatmap_scRNA, heatmap_legend_side = "left")
 ```
 
-![](2023-09-28---Main_files/figure-markdown_github/unnamed-chunk-57-1.png)
+![](2023-09-28---Main_files/figure-gfm/unnamed-chunk-57-1.png)<!-- -->
 
 ``` r
 png("../outputs/Sup Fig.7C - Biological Themes scRNAseq.png", res = 1000, 
@@ -1171,7 +1169,7 @@ dev.off()
 draw(biologicalTheme_heatmap_scRNA_mean, heatmap_legend_side = "left")
 ```
 
-![](2023-09-28---Main_files/figure-markdown_github/unnamed-chunk-58-1.png)
+![](2023-09-28---Main_files/figure-gfm/unnamed-chunk-58-1.png)<!-- -->
 
 ``` r
 png("../outputs/Sup Fig.7D - Biological Themes scRNAseq Mean Scores.png", res = 1000, 
@@ -1236,103 +1234,107 @@ sessionInfo()
     ## [41] magrittr_2.0.3             
     ## 
     ## loaded via a namespace (and not attached):
-    ##   [1] spatstat.sparse_3.0-2       bitops_1.0-7               
-    ##   [3] httr_1.4.7                  webshot_0.5.5              
-    ##   [5] RColorBrewer_1.1-3          doParallel_1.0.17          
-    ##   [7] sctransform_0.4.0           tools_4.3.1                
-    ##   [9] backports_1.4.1             utf8_1.2.3                 
-    ##  [11] R6_2.5.1                    HDF5Array_1.28.1           
-    ##  [13] uwot_0.1.16                 lazyeval_0.2.2             
-    ##  [15] rhdf5filters_1.12.1         GetoptLong_1.0.5           
-    ##  [17] sp_2.0-0                    withr_2.5.1                
-    ##  [19] prettyunits_1.1.1           progressr_0.14.0           
-    ##  [21] cli_3.6.1                   spatstat.explore_3.2-3     
-    ##  [23] labeling_0.4.3              spatstat.data_3.0-1        
-    ##  [25] ggridges_0.5.4              proxy_0.4-27               
-    ##  [27] pbapply_1.7-2               Rsamtools_2.16.0           
-    ##  [29] systemfonts_1.0.4           yulab.utils_0.0.8          
-    ##  [31] svglite_2.1.2               parallelly_1.36.0          
-    ##  [33] readxl_1.4.3                rstudioapi_0.15.0          
-    ##  [35] RSQLite_2.3.1               generics_0.1.3             
-    ##  [37] gridGraphics_0.5-1          shape_1.4.6                
-    ##  [39] BiocIO_1.10.0               spatstat.random_3.1-6      
-    ##  [41] ica_1.0-3                   car_3.1-2                  
-    ##  [43] Matrix_1.6-1                ggbeeswarm_0.7.2           
-    ##  [45] fansi_1.0.4                 abind_1.4-5                
-    ##  [47] lifecycle_1.0.3             yaml_2.3.7                 
-    ##  [49] carData_3.0-5               rhdf5_2.44.0               
-    ##  [51] BiocFileCache_2.8.0         blob_1.2.4                 
-    ##  [53] promises_1.2.1              seqsetvis_1.20.0           
-    ##  [55] crayon_1.5.2                miniUI_0.1.1.1             
-    ##  [57] lattice_0.21-8              beachmat_2.16.0            
-    ##  [59] annotate_1.78.0             KEGGREST_1.40.0            
-    ##  [61] magick_2.8.1                pillar_1.9.0               
-    ##  [63] knitr_1.45                  rjson_0.2.21               
-    ##  [65] future.apply_1.11.0         codetools_0.2-19           
-    ##  [67] leiden_0.4.3                glue_1.6.2                 
-    ##  [69] data.table_1.14.8           vctrs_0.6.3                
-    ##  [71] png_0.1-8                   bootstrap_2019.6           
-    ##  [73] cellranger_1.1.0            gtable_0.3.4               
-    ##  [75] cachem_1.0.8                xfun_0.40                  
-    ##  [77] mime_0.12                   S4Arrays_1.0.6             
-    ##  [79] tidygraph_1.2.3             SingleCellExperiment_1.22.0
-    ##  [81] iterators_1.0.14            pbmcapply_1.5.1            
-    ##  [83] lava_1.7.2.1                ellipsis_0.3.2             
-    ##  [85] fitdistrplus_1.1-11         ROCR_1.0-11                
-    ##  [87] nlme_3.1-162                survivalROC_1.0.3.1        
-    ##  [89] bit64_4.0.5                 RcppAnnoy_0.0.21           
-    ##  [91] progress_1.2.2              filelock_1.0.2             
-    ##  [93] UpSetR_1.4.0                irlba_2.3.5.1              
-    ##  [95] vipor_0.4.5                 KernSmooth_2.23-21         
-    ##  [97] colorspace_2.1-0            rmeta_3.0                  
-    ##  [99] DBI_1.1.3                   tidyselect_1.2.0           
-    ## [101] bit_4.0.5                   compiler_4.3.1             
-    ## [103] curl_5.0.2                  rvest_1.0.3                
-    ## [105] graph_1.78.0                xml2_1.3.5                 
-    ## [107] plotly_4.10.2               DelayedArray_0.26.7        
-    ## [109] rtracklayer_1.60.1          checkmate_2.2.0            
-    ## [111] scales_1.2.1                lmtest_0.9-40              
-    ## [113] rappdirs_0.3.3              goftest_1.2-3              
-    ## [115] stringr_1.5.0               digest_0.6.33              
-    ## [117] spatstat.utils_3.0-3        rmarkdown_2.24             
-    ## [119] XVector_0.40.0              htmltools_0.5.6            
-    ## [121] pkgconfig_2.0.3             sparseMatrixStats_1.12.2   
-    ## [123] highr_0.10                  dbplyr_2.3.3               
-    ## [125] fastmap_1.1.1               htmlwidgets_1.6.2          
-    ## [127] rlang_1.1.1                 GlobalOptions_0.1.2        
-    ## [129] shiny_1.7.5                 SuppDists_1.1-9.7          
-    ## [131] DelayedMatrixStats_1.22.6   farver_2.1.1               
-    ## [133] zoo_1.8-12                  jsonlite_1.8.7             
-    ## [135] BiocParallel_1.34.2         mclust_6.0.0               
-    ## [137] BiocSingular_1.16.0         RCurl_1.98-1.12            
-    ## [139] GenomeInfoDbData_1.2.10     ggplotify_0.1.2            
-    ## [141] patchwork_1.1.3             Rhdf5lib_1.22.1            
-    ## [143] munsell_0.5.0               Rcpp_1.0.11                
-    ## [145] viridis_0.6.4               reticulate_1.31            
-    ## [147] stringi_1.7.12              MASS_7.3-60                
-    ## [149] zlibbioc_1.46.0             plyr_1.8.8                 
-    ## [151] parallel_4.3.1              listenv_0.9.0              
-    ## [153] ggrepel_0.9.3               deldir_1.0-9               
-    ## [155] graphlayouts_1.0.0          Biostrings_2.68.1          
-    ## [157] splines_4.3.1               tensor_1.5                 
-    ## [159] hms_1.1.3                   circlize_0.4.15            
-    ## [161] locfit_1.5-9.8              igraph_1.5.1               
-    ## [163] spatstat.geom_3.2-5         ggsignif_0.6.4             
-    ## [165] ScaledMatrix_1.8.1          XML_3.99-0.14              
-    ## [167] evaluate_0.21               tweenr_2.0.2               
-    ## [169] httpuv_1.6.11               foreach_1.5.2              
-    ## [171] polyclip_1.10-4             RANN_2.6.1                 
-    ## [173] tidyr_1.3.0                 purrr_1.0.2                
-    ## [175] scattermore_1.2             future_1.33.0              
-    ## [177] clue_0.3-64                 ggforce_0.4.1              
-    ## [179] rsvd_1.0.5                  eulerr_7.0.0               
-    ## [181] broom_1.0.5                 xtable_1.8-4               
-    ## [183] restfulr_0.0.15             later_1.3.1                
-    ## [185] rstatix_0.7.2               viridisLite_0.4.2          
-    ## [187] class_7.3-22                tibble_3.2.1               
-    ## [189] memoise_2.0.1               beeswarm_0.4.0             
-    ## [191] AnnotationDbi_1.62.2        GenomicAlignments_1.36.0   
-    ## [193] globals_0.16.2              GSEABase_1.62.0
+    ##   [1] GSEABase_1.62.0             progress_1.2.2             
+    ##   [3] goftest_1.2-3               Biostrings_2.68.1          
+    ##   [5] HDF5Array_1.28.1            vctrs_0.6.3                
+    ##   [7] spatstat.random_3.1-6       digest_0.6.33              
+    ##   [9] png_0.1-8                   shape_1.4.6                
+    ##  [11] proxy_0.4-27                ggrepel_0.9.3              
+    ##  [13] deldir_1.0-9                parallelly_1.36.0          
+    ##  [15] magick_2.8.1                MASS_7.3-60                
+    ##  [17] httpuv_1.6.11               foreach_1.5.2              
+    ##  [19] withr_2.5.1                 xfun_0.40                  
+    ##  [21] ellipsis_0.3.2              memoise_2.0.1              
+    ##  [23] ggbeeswarm_0.7.2            systemfonts_1.0.4          
+    ##  [25] zoo_1.8-12                  GlobalOptions_0.1.2        
+    ##  [27] pbapply_1.7-2               prettyunits_1.1.1          
+    ##  [29] KEGGREST_1.40.0             promises_1.2.1             
+    ##  [31] httr_1.4.7                  rstatix_0.7.2              
+    ##  [33] restfulr_0.0.15             globals_0.16.2             
+    ##  [35] fitdistrplus_1.1-11         rhdf5filters_1.12.1        
+    ##  [37] rhdf5_2.44.0                rstudioapi_0.15.0          
+    ##  [39] miniUI_0.1.1.1              generics_0.1.3             
+    ##  [41] bootstrap_2019.6            babelgene_22.9             
+    ##  [43] SuppDists_1.1-9.7           curl_5.0.2                 
+    ##  [45] zlibbioc_1.46.0             ScaledMatrix_1.8.1         
+    ##  [47] polyclip_1.10-4             GenomeInfoDbData_1.2.10    
+    ##  [49] xtable_1.8-4                stringr_1.5.0              
+    ##  [51] doParallel_1.0.17           evaluate_0.21              
+    ##  [53] S4Arrays_1.0.6              reactable_0.4.4            
+    ##  [55] BiocFileCache_2.8.0         hms_1.1.3                  
+    ##  [57] irlba_2.3.5.1               colorspace_2.1-0           
+    ##  [59] filelock_1.0.2              visNetwork_2.1.2           
+    ##  [61] ROCR_1.0-11                 reticulate_1.31            
+    ##  [63] readxl_1.4.3                spatstat.data_3.0-1        
+    ##  [65] lmtest_0.9-40               later_1.3.1                
+    ##  [67] viridis_0.6.4               lattice_0.21-8             
+    ##  [69] spatstat.geom_3.2-5         future.apply_1.11.0        
+    ##  [71] scattermore_1.2             XML_3.99-0.14              
+    ##  [73] RcppAnnoy_0.0.21            class_7.3-22               
+    ##  [75] pillar_1.9.0                nlme_3.1-162               
+    ##  [77] seqsetvis_1.20.0            iterators_1.0.14           
+    ##  [79] compiler_4.3.1              beachmat_2.16.0            
+    ##  [81] stringi_1.7.12              rmeta_3.0                  
+    ##  [83] tensor_1.5                  GenomicAlignments_1.36.0   
+    ##  [85] plyr_1.8.8                  msigdbr_7.5.1              
+    ##  [87] crayon_1.5.2                abind_1.4-5                
+    ##  [89] BiocIO_1.10.0               gridGraphics_0.5-1         
+    ##  [91] locfit_1.5-9.8              sp_2.0-0                   
+    ##  [93] graphlayouts_1.0.0          bit_4.0.5                  
+    ##  [95] UpSetR_1.4.0                codetools_0.2-19           
+    ##  [97] BiocSingular_1.16.0         GetoptLong_1.0.5           
+    ##  [99] plotly_4.10.2               mime_0.12                  
+    ## [101] eulerr_7.0.0                splines_4.3.1              
+    ## [103] circlize_0.4.15             Rcpp_1.0.11                
+    ## [105] survivalROC_1.0.3.1         dbplyr_2.3.3               
+    ## [107] sparseMatrixStats_1.12.2    cellranger_1.1.0           
+    ## [109] knitr_1.45                  blob_1.2.4                 
+    ## [111] utf8_1.2.3                  clue_0.3-64                
+    ## [113] checkmate_2.2.0             listenv_0.9.0              
+    ## [115] DelayedMatrixStats_1.22.6   openxlsx_4.2.5.2           
+    ## [117] ggsignif_0.6.4              ggplotify_0.1.2            
+    ## [119] tibble_3.2.1                Matrix_1.6-1               
+    ## [121] svglite_2.1.2               tweenr_2.0.2               
+    ## [123] pkgconfig_2.0.3             tools_4.3.1                
+    ## [125] cachem_1.0.8                RSQLite_2.3.1              
+    ## [127] viridisLite_0.4.2           rvest_1.0.3                
+    ## [129] DBI_1.1.3                   hypeR_2.0.0                
+    ## [131] fastmap_1.1.1               rmarkdown_2.24             
+    ## [133] scales_1.2.1                pbmcapply_1.5.1            
+    ## [135] ica_1.0-3                   Rsamtools_2.16.0           
+    ## [137] broom_1.0.5                 patchwork_1.1.3            
+    ## [139] graph_1.78.0                carData_3.0-5              
+    ## [141] RANN_2.6.1                  farver_2.1.1               
+    ## [143] tidygraph_1.2.3             yaml_2.3.7                 
+    ## [145] rtracklayer_1.60.1          cli_3.6.1                  
+    ## [147] purrr_1.0.2                 webshot_0.5.5              
+    ## [149] leiden_0.4.3                lifecycle_1.0.3            
+    ## [151] uwot_0.1.16                 lava_1.7.2.1               
+    ## [153] backports_1.4.1             BiocParallel_1.34.2        
+    ## [155] annotate_1.78.0             gtable_0.3.4               
+    ## [157] rjson_0.2.21                ggridges_0.5.4             
+    ## [159] progressr_0.14.0            parallel_4.3.1             
+    ## [161] jsonlite_1.8.7              bitops_1.0-7               
+    ## [163] kableExtra_1.3.4            bit64_4.0.5                
+    ## [165] yulab.utils_0.0.8           spatstat.utils_3.0-3       
+    ## [167] zip_2.3.0                   highr_0.10                 
+    ## [169] lazyeval_0.2.2              shiny_1.7.5                
+    ## [171] htmltools_0.5.6             sctransform_0.4.0          
+    ## [173] rappdirs_0.3.3              glue_1.6.2                 
+    ## [175] XVector_0.40.0              RCurl_1.98-1.12            
+    ## [177] mclust_6.0.0                igraph_1.5.1               
+    ## [179] R6_2.5.1                    tidyr_1.3.0                
+    ## [181] SingleCellExperiment_1.22.0 labeling_0.4.3             
+    ## [183] Rhdf5lib_1.22.1             DelayedArray_0.26.7        
+    ## [185] tidyselect_1.2.0            vipor_0.4.5                
+    ## [187] ggforce_0.4.1               xml2_1.3.5                 
+    ## [189] car_3.1-2                   AnnotationDbi_1.62.2       
+    ## [191] future_1.33.0               rsvd_1.0.5                 
+    ## [193] munsell_0.5.0               KernSmooth_2.23-21         
+    ## [195] data.table_1.14.8           htmlwidgets_1.6.2          
+    ## [197] RColorBrewer_1.1-3          rlang_1.1.1                
+    ## [199] spatstat.sparse_3.0-2       spatstat.explore_3.2-3     
+    ## [201] fansi_1.0.4                 beeswarm_0.4.0
 
 ``` r
 writeLines(capture.output(sessionInfo()), paste0("./",Sys.Date(),"-", "_Session Info.txt"))
