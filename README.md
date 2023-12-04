@@ -2,7 +2,7 @@ Spatial molecular profiling of mixed invasive ductal-lobular breast
 cancers reveals heterogeneity in intrinsic molecular subtypes, oncogenic
 signatures, and mutations
 ================
-Osama Shiraz Shah
+Author: Osama Shiraz Shah
 
 
 # DISCLAIMER
