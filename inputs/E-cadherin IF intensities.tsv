@@ -1,0 +1,7 @@
+ROI	Patient	Label	Ecadherin normalized	Ecadherin % area
+1	MDLC-3	Lobular	0.011302682	0.118
+3	MDLC-3	Ductal	1.390246769	23.662
+7	MDLC-1	Ductal	2.630332681	13.441
+10	MDLC-1	Lobular	0.08125	0.819
+18	MDLC-2	Lobular	0.002531646	0.008
+20	MDLC-2	Ductal	2.058898305	4.859
