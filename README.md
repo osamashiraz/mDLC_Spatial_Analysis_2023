@@ -18,7 +18,7 @@ expected output.
 
 ![](index/figure-gfm/graphical_abstract.jpg)<!-- -->
 
-[Link to Preprint](https://www.biorxiv.org/content/10.1101/2023.09.09.557013v1)
+[Link to Preprint](https://www.biorxiv.org/content/10.1101/2023.09.09.557013v2)
 
 [Link to code webpage](https://osamashiraz.github.io/mDLC_Spatial_Analysis_2023/)
 
