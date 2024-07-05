@@ -1,6 +1,5 @@
-Spatial molecular profiling of mixed invasive ductal-lobular breast
-cancers reveals heterogeneity in intrinsic molecular subtypes, oncogenic
-signatures, and mutations
+Spatial molecular profiling of mixed invasive ductal and lobular breast cancers reveals
+heterogeneity in intrinsic molecular subtypes, oncogenic signatures, and mutations 
 ================
 Author: Osama Shiraz Shah
 
@@ -8,13 +7,21 @@ Author: Osama Shiraz Shah
 # DISCLAIMER
 
 This rmarkdown is produced to reproduce the bioinformatics analysis in
-“Spatial molecular profiling of mixed invasive ductal-lobular breast
-cancers reveals heterogeneity in intrinsic molecular subtypes, oncogenic
-signatures, and mutations”. Run the script in sequential order. Make
+“Spatial molecular profiling of mixed invasive ductal and lobular breast cancers reveals
+heterogeneity in intrinsic molecular subtypes, oncogenic signatures, and mutations”. 
+
+Run the script in sequential order. Make
 sure packages listed in the session info text file are installed.
 Changes in R and/or its package versions may result in changes in the
 expected output.
 
+# LICENSING
+
+https://creativecommons.org/licenses/by-nc-nd/4.0/
+This code/data is distributed under Creative Commons Attribution-NonCommercial-NoDerivatives License 4.0 (CC BY-NC-ND).
+
+
+# GRAPHICAL ABSTRACT
 
 ![](index/figure-gfm/graphical_abstract.jpg)<!-- -->
 
@@ -22,7 +29,7 @@ expected output.
 
 [Link to code webpage](https://osamashiraz.github.io/mDLC_Spatial_Analysis_2023/)
 
-[Link to dataset](https://data.mendeley.com/datasets/btv7g7n9ys/1)
+[Link to dataset](https://data.mendeley.com/datasets/btv7g7n9ys)
 
 
 # INSTALL PACKAGES
