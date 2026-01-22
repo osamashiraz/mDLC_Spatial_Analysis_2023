@@ -28,6 +28,8 @@ This code/data is distributed under Creative Commons Attribution-NonCommercial-N
 
 [Link to Preprint](https://www.biorxiv.org/content/10.1101/2023.09.09.557013v2)
 
+[Link to PNAS Publication](https://www.pnas.org/doi/10.1073/pnas.2322068121)
+
 [Link to code webpage](https://osamashiraz.github.io/mDLC_Spatial_Analysis_2023/)
 
 [Link to dataset](https://data.mendeley.com/datasets/btv7g7n9ys)
